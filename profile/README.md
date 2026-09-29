@@ -1,18 +1,29 @@
-# Welcome to Krabka 👋
+# Krabka
 
-Hi, we're **Krabka** — thanks for stopping by our GitHub organization.
+An Apache Kafka-compatible streaming ecosystem. Website: [krabka.io](https://krabka.io)
 
-## What you'll find here
+## Repositories
 
-- **Repositories** — our projects, tools, and experiments. Browse the pinned repositories to get started.
-- **Community health files** — shared defaults (issue templates, contributing guidelines, and more) live in the [`.github`](https://github.com/krabka-io/.github) repository and apply across the organization.
+**Core**
+- [krabka-broker](https://github.com/krabka-io/krabka-broker) — Kafka-compatible broker with a KRaft consensus engine and tiered storage
+- [krabka-protocol](https://github.com/krabka-io/krabka-protocol) — the Kafka wire layer: API codecs, KRaft metadata records, SASL/TLS
+- [krabka-schema-registry](https://github.com/krabka-io/krabka-schema-registry) — Confluent Schema Registry-compatible service, plus client serdes
+- [krabka-gateway](https://github.com/krabka-io/krabka-gateway) — gRPC / Connect-RPC and HTTP front end to Kafka topics, with app SDKs
+- [krabka-connect](https://github.com/krabka-io/krabka-connect) — connector framework, connectors, and worker
 
-## Getting involved
+**Clients and stream processing**
+- [krabka-client-rs](https://github.com/krabka-io/krabka-client-rs) — Rust producer, consumer, and admin client
+- [krabka-streams-rs](https://github.com/krabka-io/krabka-streams-rs) · [krabka-streams-java](https://github.com/krabka-io/krabka-streams-java) · [krabka-streams-go](https://github.com/krabka-io/krabka-streams-go) — Kafka Streams-style libraries
 
-- 🐛 **Found a bug or have an idea?** Open an issue in the relevant repository.
-- 🔧 **Want to contribute?** Fork the repo, make your change, and open a pull request. Please check the repository's README for any project-specific guidelines.
-- 💬 **Questions?** Start a discussion or open an issue and we'll take a look.
+**Operations**
+- [krabka-operator](https://github.com/krabka-io/krabka-operator) — Kubernetes operator that reconciles clusters from custom resources
+- [krabka-cli](https://github.com/krabka-io/krabka-cli) — the `krabka` operator CLI
+- [krabka-rebalancer](https://github.com/krabka-io/krabka-rebalancer) — partition rebalancing
+- [krabka-o11y](https://github.com/krabka-io/krabka-o11y) — metrics, traces, profiles, and logs · [demo](https://github.com/krabka-io/krabka-o11y-demo)
 
-## License
+**Other**
+- [gres](https://github.com/krabka-io/gres) · [tooling](https://github.com/krabka-io/tooling) — shared build and release inputs · [krabka-io.github.io](https://github.com/krabka-io/krabka-io.github.io) — the website
 
-Unless noted otherwise in a repository, our projects are released under the license included in that repository.
+## Contributing
+
+Issues and pull requests are welcome in any repository; each one's README and `CONTRIBUTING.md` (where present) have the details.
