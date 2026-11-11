@@ -1,0 +1,28 @@
+name: CI
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  documents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+      - name: Check changed documents for whitespace errors
+        run: git diff --check HEAD^ HEAD
+
+  gate:
+    name: gate
+    if: always()
+    needs: [documents]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: krabka-io/tooling/actions/gate@a42cceef18200f4f282ae5a090856f63125a12ff
+        with:
+          results: ${{ toJSON(needs) }}
